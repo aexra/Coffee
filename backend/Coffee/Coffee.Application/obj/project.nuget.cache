@@ -1,10 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "8OYvs1W6DUW0r9ujsyNtliTp3SGAfICzVj8+3RFbCv0jsK7lydfSoYU8VuHSXclm+R8myLHQVE4kep7AqyEx2g==",
+  "dgSpecHash": "pfjrrW9uzgfMpM39YWwdyIAYoZWZdRO5peIWSexAkwCZ4RhyScStcmKfHfhyM13i8zAj7si13EFQbv58kOfsag==",
   "success": true,
   "projectFilePath": "D:\\useless\\projects\\projects\\Coffee\\backend\\Coffee\\Coffee.Application\\Coffee.Application.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\deskt\\.nuget\\packages\\automapper\\13.0.1\\automapper.13.0.1.nupkg.sha512",
+    "C:\\Users\\deskt\\.nuget\\packages\\mediatr\\12.2.0\\mediatr.12.2.0.nupkg.sha512",
+    "C:\\Users\\deskt\\.nuget\\packages\\mediatr.contracts\\2.0.1\\mediatr.contracts.2.0.1.nupkg.sha512",
     "C:\\Users\\deskt\\.nuget\\packages\\microsoft.entityframeworkcore\\8.0.4\\microsoft.entityframeworkcore.8.0.4.nupkg.sha512",
     "C:\\Users\\deskt\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\8.0.4\\microsoft.entityframeworkcore.abstractions.8.0.4.nupkg.sha512",
     "C:\\Users\\deskt\\.nuget\\packages\\microsoft.entityframeworkcore.analyzers\\8.0.4\\microsoft.entityframeworkcore.analyzers.8.0.4.nupkg.sha512",
