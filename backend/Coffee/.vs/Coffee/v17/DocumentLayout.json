@@ -3,12 +3,24 @@
   "WorkspaceRootPath": "D:\\useless\\projects\\projects\\Coffee\\backend\\Coffee\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{870A3D04-C0C4-4D98-884A-8EB77E7940B6}|Coffee.csproj|d:\\useless\\projects\\projects\\coffee\\backend\\coffee\\data\\meeting.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{870A3D04-C0C4-4D98-884A-8EB77E7940B6}|Coffee.csproj|solutionrelative:data\\meeting.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{870A3D04-C0C4-4D98-884A-8EB77E7940B6}|Coffee.csproj|d:\\useless\\projects\\projects\\coffee\\backend\\coffee\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{870A3D04-C0C4-4D98-884A-8EB77E7940B6}|Coffee.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{870A3D04-C0C4-4D98-884A-8EB77E7940B6}|Coffee.csproj|d:\\useless\\projects\\projects\\coffee\\backend\\coffee\\data\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{870A3D04-C0C4-4D98-884A-8EB77E7940B6}|Coffee.csproj|solutionrelative:data\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{870A3D04-C0C4-4D98-884A-8EB77E7940B6}|Coffee.csproj|d:\\useless\\projects\\projects\\coffee\\backend\\coffee\\data\\datacontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{870A3D04-C0C4-4D98-884A-8EB77E7940B6}|Coffee.csproj|solutionrelative:data\\datacontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{870A3D04-C0C4-4D98-884A-8EB77E7940B6}|Coffee.csproj|d:\\useless\\projects\\projects\\coffee\\backend\\coffee\\controllers\\testcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{870A3D04-C0C4-4D98-884A-8EB77E7940B6}|Coffee.csproj|solutionrelative:controllers\\testcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{870A3D04-C0C4-4D98-884A-8EB77E7940B6}|Coffee.csproj|d:\\useless\\projects\\projects\\coffee\\backend\\coffee\\controllers\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{870A3D04-C0C4-4D98-884A-8EB77E7940B6}|Coffee.csproj|solutionrelative:controllers\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{870A3D04-C0C4-4D98-884A-8EB77E7940B6}|Coffee.csproj|d:\\useless\\projects\\projects\\coffee\\backend\\coffee\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{870A3D04-C0C4-4D98-884A-8EB77E7940B6}|Coffee.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,7 +30,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Bookmark",
@@ -34,28 +46,67 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Meeting.cs",
-              "DocumentMoniker": "D:\\useless\\projects\\projects\\Coffee\\backend\\Coffee\\Data\\Meeting.cs",
-              "RelativeDocumentMoniker": "Data\\Meeting.cs",
-              "ToolTip": "D:\\useless\\projects\\projects\\Coffee\\backend\\Coffee\\Data\\Meeting.cs",
-              "RelativeToolTip": "Data\\Meeting.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAEAAAAAAAAA",
+              "DocumentIndex": 2,
+              "Title": "TestController.cs",
+              "DocumentMoniker": "D:\\useless\\projects\\projects\\Coffee\\backend\\Coffee\\Controllers\\TestController.cs",
+              "RelativeDocumentMoniker": "Controllers\\TestController.cs",
+              "ToolTip": "D:\\useless\\projects\\projects\\Coffee\\backend\\Coffee\\Controllers\\TestController.cs",
+              "RelativeToolTip": "Controllers\\TestController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAMAAAAPAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-19T15:20:06.857Z",
+              "WhenOpened": "2024-04-19T16:12:46.908Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "UsersController.cs",
+              "DocumentMoniker": "D:\\useless\\projects\\projects\\Coffee\\backend\\Coffee\\Controllers\\UsersController.cs",
+              "RelativeDocumentMoniker": "Controllers\\UsersController.cs",
+              "ToolTip": "D:\\useless\\projects\\projects\\Coffee\\backend\\Coffee\\Controllers\\UsersController.cs",
+              "RelativeToolTip": "Controllers\\UsersController.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAAAgAAAAUAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-19T15:42:12.931Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\useless\\projects\\projects\\Coffee\\backend\\Coffee\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "D:\\useless\\projects\\projects\\Coffee\\backend\\Coffee\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAiAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-19T15:35:13.954Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "User.cs",
-              "DocumentMoniker": "D:\\useless\\projects\\projects\\Coffee\\backend\\Coffee\\Data\\User.cs",
-              "RelativeDocumentMoniker": "Data\\User.cs",
-              "ToolTip": "D:\\useless\\projects\\projects\\Coffee\\backend\\Coffee\\Data\\User.cs",
-              "RelativeToolTip": "Data\\User.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAMAAAABAAAA",
+              "Title": "DataContext.cs",
+              "DocumentMoniker": "D:\\useless\\projects\\projects\\Coffee\\backend\\Coffee\\Data\\DataContext.cs",
+              "RelativeDocumentMoniker": "Data\\DataContext.cs",
+              "ToolTip": "D:\\useless\\projects\\projects\\Coffee\\backend\\Coffee\\Data\\DataContext.cs",
+              "RelativeToolTip": "Data\\DataContext.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAkAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-19T14:59:45.939Z",
+              "WhenOpened": "2024-04-19T15:32:25.672Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "D:\\useless\\projects\\projects\\Coffee\\backend\\Coffee\\appsettings.json",
+              "RelativeDocumentMoniker": "appsettings.json",
+              "ToolTip": "D:\\useless\\projects\\projects\\Coffee\\backend\\Coffee\\appsettings.json",
+              "RelativeToolTip": "appsettings.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAVAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-04-19T15:30:48.408Z",
               "EditorCaption": ""
             }
           ]
