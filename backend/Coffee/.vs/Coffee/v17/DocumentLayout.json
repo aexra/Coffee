@@ -1,7 +1,16 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "D:\\useless\\projects\\projects\\Coffee\\backend\\Coffee\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{ADFD0C2F-815D-479A-8F19-49FA5C334A02}|Coffee.Persistence\\Coffee.Persistence.csproj|d:\\useless\\projects\\projects\\coffee\\backend\\coffee\\coffee.persistence\\entitytypeconfigurations\\meetingconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ADFD0C2F-815D-479A-8F19-49FA5C334A02}|Coffee.Persistence\\Coffee.Persistence.csproj|solutionrelative:coffee.persistence\\entitytypeconfigurations\\meetingconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ADFD0C2F-815D-479A-8F19-49FA5C334A02}|Coffee.Persistence\\Coffee.Persistence.csproj|d:\\useless\\projects\\projects\\coffee\\backend\\coffee\\coffee.persistence\\entitytypeconfigurations\\userconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ADFD0C2F-815D-479A-8F19-49FA5C334A02}|Coffee.Persistence\\Coffee.Persistence.csproj|solutionrelative:coffee.persistence\\entitytypeconfigurations\\userconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -9,7 +18,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": -1,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Bookmark",
@@ -22,6 +31,32 @@
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "UserConfiguration.cs",
+              "DocumentMoniker": "D:\\useless\\projects\\projects\\Coffee\\backend\\Coffee\\Coffee.Persistence\\EntityTypeConfigurations\\UserConfiguration.cs",
+              "RelativeDocumentMoniker": "Coffee.Persistence\\EntityTypeConfigurations\\UserConfiguration.cs",
+              "ToolTip": "D:\\useless\\projects\\projects\\Coffee\\backend\\Coffee\\Coffee.Persistence\\EntityTypeConfigurations\\UserConfiguration.cs",
+              "RelativeToolTip": "Coffee.Persistence\\EntityTypeConfigurations\\UserConfiguration.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-19T19:33:44.152Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "MeetingConfiguration.cs",
+              "DocumentMoniker": "D:\\useless\\projects\\projects\\Coffee\\backend\\Coffee\\Coffee.Persistence\\EntityTypeConfigurations\\MeetingConfiguration.cs",
+              "RelativeDocumentMoniker": "Coffee.Persistence\\EntityTypeConfigurations\\MeetingConfiguration.cs",
+              "ToolTip": "D:\\useless\\projects\\projects\\Coffee\\backend\\Coffee\\Coffee.Persistence\\EntityTypeConfigurations\\MeetingConfiguration.cs",
+              "RelativeToolTip": "Coffee.Persistence\\EntityTypeConfigurations\\MeetingConfiguration.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-19T19:33:23.368Z",
+              "EditorCaption": ""
             }
           ]
         }
