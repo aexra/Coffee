@@ -5,7 +5,10 @@ body {
 
     height: 100vh;
     width: 100vw;
-    background: linear-gradient(0deg, rgba(250,209,58,1) 27%, rgba(251,166,66,1) 76%);}
+    background: linear-gradient(0deg, rgba(250,209,58,1) 27%, rgba(251,166,66,1) 76%);
+
+    overflow: hidden;
+}
 
 #content-wrapper {
     display: flex;
@@ -30,6 +33,10 @@ coffee-color {
     color: #582a00;
 }
 
+thinner {
+    font-weight: 500;
+}
+
 #join-btn {
     background-color: #1d1e23;
     color: #fff;
@@ -48,6 +55,33 @@ coffee-color {
     background-color: bisque;
     color: #582a00;
     font-weight: 600;
+}
+
+@keyframes slideInFromBottom {
+    0% {
+      transform: translateY(80%);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+
+#mega-big-circle {
+    animation: 1.8s ease 0s 1 slideInFromBottom;
+
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 60vw;
+    border: none;
+    object-fit: contain;
+}
+#mega-big-circle > .mask {
+    bottom: 0;
+    position: absolute;
+
+    width: 100%;
+    height: 100%;
 }
 
 .montserrat-400 {
