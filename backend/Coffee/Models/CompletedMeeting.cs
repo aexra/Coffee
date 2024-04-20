@@ -12,10 +12,6 @@ public class CompletedMeeting
     public User? User2 { get; set; }
     public bool Success {get; set;}
     public User? Canceller { get; set; }
-    //public string ImagesString { get; set; } = string.Empty;
-
-    //[Ignore]
-    //public List<Guid> ImagesIds => ImagesString.Split(',').Select(Guid.Parse).ToList();
 
     [TextBlob(nameof(ImagesBlobbed))]
     public List<Image> Images { get; set; } = [];
