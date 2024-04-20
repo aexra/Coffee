@@ -1,3 +1,6 @@
 /backend/Coffee/.vs
 /backend/Coffee/bin
 /backend/Coffee/obj
+/backend/Coffee/Migrations
+/backend/Coffee/Database/LocalDB.db-shm
+/backend/Coffee/Database/LocalDB.db-wal
