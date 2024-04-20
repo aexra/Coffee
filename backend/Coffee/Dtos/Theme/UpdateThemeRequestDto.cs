@@ -2,4 +2,8 @@
 
 public class UpdateThemeRequestDto
 {
+    public string? Description
+    {
+        get; set;
+    }
 }

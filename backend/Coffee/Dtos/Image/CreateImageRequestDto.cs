@@ -2,4 +2,8 @@
 
 public class CreateImageRequestDto
 {
+    public string? BytesString
+    {
+        get; set;
+    }
 }

@@ -2,12 +2,8 @@
 
 namespace Coffee.Dtos.CompletedMeeting;
 
-public class CompletedMeetingDto
+public class UpdateCompletedMeetingRequestDto
 {
-    public ulong Id
-    {
-        get; set;
-    }
     public DateTime? Date
     {
         get; set;

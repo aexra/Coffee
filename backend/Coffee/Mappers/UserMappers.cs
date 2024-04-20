@@ -5,24 +5,24 @@ namespace Coffee.Mappers;
 
 public static class UserMappers
 {
-    public static UserDto ToDto(this User user)
+    public static UserDto ToDto(this User entity)
     {
         return new UserDto
         {
-            Id = user.Id,
-            HiredSince = user.HiredSince,
-            Avatar = user.Avatar,
-            MeetingsCount = user.MeetingsCount,
-            Name = user.Name,
-            Surname = user.Surname,
-            Patronymic = user.Patronymic,
-            Position = user.Position,
-            Hobbies = user.Hobbies,
-            Pets = user.Pets,
-            Coffee = user.Coffee,
-            Telegram = user.Telegram,
-            Vk = user.Vk,
-            PhoneNumber = user.PhoneNumber
+            Id = entity.Id,
+            HiredSince = entity.HiredSince,
+            Avatar = entity.Avatar,
+            MeetingsCount = entity.MeetingsCount,
+            Name = entity.Name,
+            Surname = entity.Surname,
+            Patronymic = entity.Patronymic,
+            Position = entity.Position,
+            Hobbies = entity.Hobbies,
+            Pets = entity.Pets,
+            Coffee = entity.Coffee,
+            Telegram = entity.Telegram,
+            Vk = entity.Vk,
+            PhoneNumber = entity.PhoneNumber
         };
     }
 

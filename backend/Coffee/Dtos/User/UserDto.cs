@@ -1,6 +1,4 @@
-﻿using Coffee.Models;
-
-namespace Coffee.Dtos.User;
+﻿namespace Coffee.Dtos.User;
 
 public class UserDto
 {
@@ -12,7 +10,7 @@ public class UserDto
     {
         get; set;
     }
-    public Image? Avatar
+    public Models.Image? Avatar
     {
         get; set;
     }
