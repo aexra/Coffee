@@ -2,8 +2,8 @@ namespace Coffee.Models;
 
 public class User
 {
-    public Guid Id {get; set;}
-    public DateOnly HiredSince { get; set; }
+    public ulong Id {get; set;}
+    public DateOnly? HiredSince { get; set; }
     public Image? Avatar { get; set; }
     public uint MeetingsCount { get; set; }
     public string? Name { get; set; }

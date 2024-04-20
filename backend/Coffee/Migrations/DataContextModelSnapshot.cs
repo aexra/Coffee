@@ -19,14 +19,14 @@ namespace Coffee.Migrations
 
             modelBuilder.Entity("Coffee.Models.CompletedMeeting", b =>
                 {
-                    b.Property<Guid>("Id")
+                    b.Property<ulong>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("TEXT");
+                        .HasColumnType("INTEGER");
 
-                    b.Property<Guid?>("CancellerId")
-                        .HasColumnType("TEXT");
+                    b.Property<ulong?>("CancellerId")
+                        .HasColumnType("INTEGER");
 
-                    b.Property<DateTime>("Date")
+                    b.Property<DateTime?>("Date")
                         .HasColumnType("TEXT");
 
                     b.Property<short>("Duration")
@@ -38,11 +38,11 @@ namespace Coffee.Migrations
                     b.Property<bool>("Success")
                         .HasColumnType("INTEGER");
 
-                    b.Property<Guid?>("User1Id")
-                        .HasColumnType("TEXT");
+                    b.Property<ulong?>("User1Id")
+                        .HasColumnType("INTEGER");
 
-                    b.Property<Guid?>("User2Id")
-                        .HasColumnType("TEXT");
+                    b.Property<ulong?>("User2Id")
+                        .HasColumnType("INTEGER");
 
                     b.HasKey("Id");
 
@@ -57,21 +57,21 @@ namespace Coffee.Migrations
 
             modelBuilder.Entity("Coffee.Models.FutureMeeting", b =>
                 {
-                    b.Property<Guid>("Id")
+                    b.Property<ulong>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("TEXT");
+                        .HasColumnType("INTEGER");
 
-                    b.Property<DateTime>("Date")
+                    b.Property<DateTime?>("Date")
                         .HasColumnType("TEXT");
 
                     b.Property<short>("Duration")
                         .HasColumnType("INTEGER");
 
-                    b.Property<Guid?>("User1Id")
-                        .HasColumnType("TEXT");
+                    b.Property<ulong?>("User1Id")
+                        .HasColumnType("INTEGER");
 
-                    b.Property<Guid?>("User2Id")
-                        .HasColumnType("TEXT");
+                    b.Property<ulong?>("User2Id")
+                        .HasColumnType("INTEGER");
 
                     b.HasKey("Id");
 
@@ -84,15 +84,15 @@ namespace Coffee.Migrations
 
             modelBuilder.Entity("Coffee.Models.Image", b =>
                 {
-                    b.Property<Guid>("Id")
+                    b.Property<ulong>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("TEXT");
+                        .HasColumnType("INTEGER");
 
                     b.Property<string>("BytesString")
                         .HasColumnType("TEXT");
 
-                    b.Property<Guid?>("CompletedMeetingId")
-                        .HasColumnType("TEXT");
+                    b.Property<ulong?>("CompletedMeetingId")
+                        .HasColumnType("INTEGER");
 
                     b.HasKey("Id");
 
@@ -103,9 +103,9 @@ namespace Coffee.Migrations
 
             modelBuilder.Entity("Coffee.Models.Theme", b =>
                 {
-                    b.Property<Guid>("Id")
+                    b.Property<ulong>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("TEXT");
+                        .HasColumnType("INTEGER");
 
                     b.Property<string>("Description")
                         .HasColumnType("TEXT");
@@ -117,17 +117,17 @@ namespace Coffee.Migrations
 
             modelBuilder.Entity("Coffee.Models.User", b =>
                 {
-                    b.Property<Guid>("Id")
+                    b.Property<ulong>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("TEXT");
+                        .HasColumnType("INTEGER");
 
-                    b.Property<Guid?>("AvatarId")
-                        .HasColumnType("TEXT");
+                    b.Property<ulong?>("AvatarId")
+                        .HasColumnType("INTEGER");
 
                     b.Property<string>("Coffee")
                         .HasColumnType("TEXT");
 
-                    b.Property<DateOnly>("HiredSince")
+                    b.Property<DateOnly?>("HiredSince")
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Hobbies")

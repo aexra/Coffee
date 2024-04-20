@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Coffee.Controllers;
 
-[Route("api/user")]
+[Route("api/users")]
 [ApiController]
 public class UserController : ControllerBase
 {
@@ -26,7 +26,7 @@ public class UserController : ControllerBase
     [HttpGet("{id}")]
     public IActionResult GetById([FromRoute] int id)
     {
-        var user = _context.Users.Find(id);
+        var user = _context.Users.Find((ulong)id);
 
         if (user == null)
         {

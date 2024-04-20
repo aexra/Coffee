@@ -15,7 +15,8 @@ namespace Coffee.Migrations
                 name: "Themes",
                 columns: table => new
                 {
-                    Id = table.Column<Guid>(type: "TEXT", nullable: false),
+                    Id = table.Column<ulong>(type: "INTEGER", nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
                     Description = table.Column<string>(type: "TEXT", nullable: true)
                 },
                 constraints: table =>
@@ -27,13 +28,14 @@ namespace Coffee.Migrations
                 name: "CompletedMeetings",
                 columns: table => new
                 {
-                    Id = table.Column<Guid>(type: "TEXT", nullable: false),
-                    Date = table.Column<DateTime>(type: "TEXT", nullable: false),
+                    Id = table.Column<ulong>(type: "INTEGER", nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
+                    Date = table.Column<DateTime>(type: "TEXT", nullable: true),
                     Duration = table.Column<short>(type: "INTEGER", nullable: false),
-                    User1Id = table.Column<Guid>(type: "TEXT", nullable: true),
-                    User2Id = table.Column<Guid>(type: "TEXT", nullable: true),
+                    User1Id = table.Column<ulong>(type: "INTEGER", nullable: true),
+                    User2Id = table.Column<ulong>(type: "INTEGER", nullable: true),
                     Success = table.Column<bool>(type: "INTEGER", nullable: false),
-                    CancellerId = table.Column<Guid>(type: "TEXT", nullable: true),
+                    CancellerId = table.Column<ulong>(type: "INTEGER", nullable: true),
                     ImagesBlobbed = table.Column<string>(type: "TEXT", nullable: true)
                 },
                 constraints: table =>
@@ -45,9 +47,10 @@ namespace Coffee.Migrations
                 name: "Images",
                 columns: table => new
                 {
-                    Id = table.Column<Guid>(type: "TEXT", nullable: false),
+                    Id = table.Column<ulong>(type: "INTEGER", nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
                     BytesString = table.Column<string>(type: "TEXT", nullable: true),
-                    CompletedMeetingId = table.Column<Guid>(type: "TEXT", nullable: true)
+                    CompletedMeetingId = table.Column<ulong>(type: "INTEGER", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -63,9 +66,10 @@ namespace Coffee.Migrations
                 name: "Users",
                 columns: table => new
                 {
-                    Id = table.Column<Guid>(type: "TEXT", nullable: false),
-                    HiredSince = table.Column<DateOnly>(type: "TEXT", nullable: false),
-                    AvatarId = table.Column<Guid>(type: "TEXT", nullable: true),
+                    Id = table.Column<ulong>(type: "INTEGER", nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
+                    HiredSince = table.Column<DateOnly>(type: "TEXT", nullable: true),
+                    AvatarId = table.Column<ulong>(type: "INTEGER", nullable: true),
                     MeetingsCount = table.Column<uint>(type: "INTEGER", nullable: false),
                     Name = table.Column<string>(type: "TEXT", nullable: true),
                     Surname = table.Column<string>(type: "TEXT", nullable: true),
@@ -92,11 +96,12 @@ namespace Coffee.Migrations
                 name: "FutureMeetings",
                 columns: table => new
                 {
-                    Id = table.Column<Guid>(type: "TEXT", nullable: false),
-                    Date = table.Column<DateTime>(type: "TEXT", nullable: false),
+                    Id = table.Column<ulong>(type: "INTEGER", nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
+                    Date = table.Column<DateTime>(type: "TEXT", nullable: true),
                     Duration = table.Column<short>(type: "INTEGER", nullable: false),
-                    User1Id = table.Column<Guid>(type: "TEXT", nullable: true),
-                    User2Id = table.Column<Guid>(type: "TEXT", nullable: true)
+                    User1Id = table.Column<ulong>(type: "INTEGER", nullable: true),
+                    User2Id = table.Column<ulong>(type: "INTEGER", nullable: true)
                 },
                 constraints: table =>
                 {
