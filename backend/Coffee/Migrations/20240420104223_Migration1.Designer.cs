@@ -11,8 +11,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Coffee.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20240420103748_InitialCreate")]
-    partial class InitialCreate
+    [Migration("20240420104223_Migration1")]
+    partial class Migration1
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

@@ -1,16 +1,15 @@
 ﻿using Coffee.Data;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 
 namespace Coffee.Controllers;
 
-[Route("api/users")]
+[Route("api/rooms")]
 [ApiController]
-public class UserController : ControllerBase
+public class RoomsController : ControllerBase
 {
     private readonly DataContext _context;
 
-    public UserController(DataContext context)
+    public RoomsController(DataContext context)
     {
         _context = context;
     }
@@ -18,21 +17,21 @@ public class UserController : ControllerBase
     [HttpGet]
     public IActionResult GetAll()
     {
-        var users = _context.Users.ToList();
+        var rooms = _context.Rooms.ToList();
 
-        return Ok(users);
+        return Ok(rooms);
     }
 
     [HttpGet("{id}")]
     public IActionResult GetById([FromRoute] int id)
     {
-        var user = _context.Users.Find((ulong)id);
+        var room = _context.Rooms.Find((ulong)id);
 
-        if (user == null)
+        if (room == null)
         {
             return NotFound();
         }
 
-        return Ok(user);
+        return Ok(room);
     }
 }
