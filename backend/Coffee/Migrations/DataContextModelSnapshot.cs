@@ -32,6 +32,9 @@ namespace Coffee.Migrations
                     b.Property<short>("Duration")
                         .HasColumnType("INTEGER");
 
+                    b.Property<string>("ImagesBlobbed")
+                        .HasColumnType("TEXT");
+
                     b.Property<bool>("Success")
                         .HasColumnType("INTEGER");
 
@@ -129,6 +132,9 @@ namespace Coffee.Migrations
 
                     b.Property<string>("Hobbies")
                         .HasColumnType("TEXT");
+
+                    b.Property<uint>("MeetingsCount")
+                        .HasColumnType("INTEGER");
 
                     b.Property<string>("Name")
                         .HasColumnType("TEXT");

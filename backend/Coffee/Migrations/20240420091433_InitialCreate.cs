@@ -33,7 +33,8 @@ namespace Coffee.Migrations
                     User1Id = table.Column<Guid>(type: "TEXT", nullable: true),
                     User2Id = table.Column<Guid>(type: "TEXT", nullable: true),
                     Success = table.Column<bool>(type: "INTEGER", nullable: false),
-                    CancellerId = table.Column<Guid>(type: "TEXT", nullable: true)
+                    CancellerId = table.Column<Guid>(type: "TEXT", nullable: true),
+                    ImagesBlobbed = table.Column<string>(type: "TEXT", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -65,6 +66,7 @@ namespace Coffee.Migrations
                     Id = table.Column<Guid>(type: "TEXT", nullable: false),
                     HiredSince = table.Column<DateOnly>(type: "TEXT", nullable: false),
                     AvatarId = table.Column<Guid>(type: "TEXT", nullable: true),
+                    MeetingsCount = table.Column<uint>(type: "INTEGER", nullable: false),
                     Name = table.Column<string>(type: "TEXT", nullable: true),
                     Surname = table.Column<string>(type: "TEXT", nullable: true),
                     Patronymic = table.Column<string>(type: "TEXT", nullable: true),
