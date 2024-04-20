@@ -42,7 +42,10 @@ builder.Services.AddSwaggerGen(option =>
 });
 
 builder.Services.AddDbContext<DataContext>();
-builder.Services.AddIdentity<User, IdentityRole>().AddEntityFrameworkStores<DataContext>();
+builder.Services.AddIdentity<User, IdentityRole>(options =>
+{
+    options.User.RequireUniqueEmail = true;
+}).AddEntityFrameworkStores<DataContext>();
 
 builder.Services.AddAuthentication(options =>
 {
@@ -81,6 +84,7 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
+app.UseRouting();
 app.UseAuthentication();
 app.UseAuthorization();
 
