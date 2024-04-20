@@ -1,4 +1,6 @@
 ﻿using Coffee.Data;
+using Coffee.Dtos.User;
+using Coffee.Mappers;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Coffee.Controllers;
@@ -33,5 +35,14 @@ public class UsersController : ControllerBase
         }
 
         return Ok(user);
+    }
+
+    [HttpPost]
+    public IActionResult Create([FromBody] CreateUserRequestDto dto)
+    {
+        var user = dto.ToUser();
+        _context.Users.Add(user);
+        _context.SaveChanges();
+        return CreatedAtAction(nameof(GetById), new { id = user.Id }, user.ToDto());
     }
 }
