@@ -41,7 +41,7 @@ public class ImagesController : ControllerBase
     [HttpPost]
     public async Task<IActionResult> Create([FromBody] CreateImageRequestDto dto)
     {
-        var image = dto.ToImage();
+        var image = dto.ToEntity();
         await _context.Images.AddAsync(image);
         await _context.SaveChangesAsync();
         return CreatedAtAction(nameof(GetById), new { id = image.Id }, image.ToDto());

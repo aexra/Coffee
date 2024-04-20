@@ -41,7 +41,7 @@ public class ThemesController : ControllerBase
     [HttpPost]
     public async Task<IActionResult> Create([FromBody] CreateThemeRequestDto dto)
     {
-        var theme = dto.ToTheme();
+        var theme = dto.ToEntity();
         await _context.Themes.AddAsync(theme);
         await _context.SaveChangesAsync();
         return CreatedAtAction(nameof(GetById), new { id = theme.Id }, theme.ToDto());

@@ -41,7 +41,7 @@ public class FutureMeetingsController : ControllerBase
     [HttpPost]
     public async Task<IActionResult> Create([FromBody] CreateFutureMeetingRequestDto dto)
     {
-        var fm = dto.ToFutureMeeting();
+        var fm = dto.ToEntity();
         await _context.FutureMeetings.AddAsync(fm);
         await _context.SaveChangesAsync();
         return CreatedAtAction(nameof(GetById), new { id = fm.Id }, fm.ToDto());

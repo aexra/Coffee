@@ -41,7 +41,7 @@ public class CompletedMeetingsController : ControllerBase
     [HttpPost]
     public async Task<IActionResult> Create([FromBody] CreateCompletedMeetingRequestDto dto)
     {
-        var cm = dto.ToCompletedMeeting();
+        var cm = dto.ToEntity();
         await _context.CompletedMeetings.AddAsync(cm);
         await _context.SaveChangesAsync();
         return CreatedAtAction(nameof(GetById), new { id = cm.Id }, cm.ToDto());

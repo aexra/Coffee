@@ -41,7 +41,7 @@ public class UsersController : ControllerBase
     [HttpPost]
     public async Task<IActionResult> Create([FromBody] CreateUserRequestDto dto)
     {
-        var user = dto.ToUser();
+        var user = dto.ToEntity();
         await _context.Users.AddAsync(user);
         await _context.SaveChangesAsync();
         return CreatedAtAction(nameof(GetById), new { id = user.Id }, user.ToDto());

@@ -15,7 +15,7 @@ public static class RoomMapper
         };
     }
 
-    public static Room ToRoom(this CreateRoomRequestDto dto)
+    public static Room ToEntity(this CreateRoomRequestDto dto)
     {
         return new Room
         {

@@ -14,7 +14,7 @@ public static class ThemeMapper
         };
     }
 
-    public static Theme ToTheme(this CreateThemeRequestDto dto)
+    public static Theme ToEntity(this CreateThemeRequestDto dto)
     {
         return new Theme
         {

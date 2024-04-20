@@ -20,7 +20,7 @@ public static class CompletedMeetingMapper
         };
     }
 
-    public static CompletedMeeting ToCompletedMeeting(this CreateCompletedMeetingRequestDto dto)
+    public static CompletedMeeting ToEntity(this CreateCompletedMeetingRequestDto dto)
     {
         return new CompletedMeeting
         {

@@ -17,7 +17,7 @@ public static class FutureMeetingMapper
         };
     }
 
-    public static FutureMeeting ToFutureMeeting(this CreateFutureMeetingRequestDto dto)
+    public static FutureMeeting ToEntity(this CreateFutureMeetingRequestDto dto)
     {
         return new FutureMeeting
         {

@@ -26,7 +26,7 @@ public static class UserMappers
         };
     }
 
-    public static User ToUser(this CreateUserRequestDto dto)
+    public static User ToEntity(this CreateUserRequestDto dto)
     {
         return new User
         {

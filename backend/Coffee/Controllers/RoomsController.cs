@@ -41,7 +41,7 @@ public class RoomsController : ControllerBase
     [HttpPost]
     public async Task<IActionResult> Create([FromBody] CreateRoomRequestDto dto)
     {
-        var room = dto.ToRoom();
+        var room = dto.ToEntity();
         await _context.Rooms.AddAsync(room);
         await _context.SaveChangesAsync();
         return CreatedAtAction(nameof(GetById), new { id = room.Id }, room.ToDto());

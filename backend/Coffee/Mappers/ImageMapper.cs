@@ -14,7 +14,7 @@ public static class ImageMapper
         };
     }
 
-    public static Image ToImage(this CreateImageRequestDto dto)
+    public static Image ToEntity(this CreateImageRequestDto dto)
     {
         return new Image
         {
