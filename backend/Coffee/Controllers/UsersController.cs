@@ -49,7 +49,7 @@ public class UsersController : ControllerBase
 
     [HttpPut]
     [Route("{id}")]
-    public async Task<IActionResult> Update([FromRoute] ulong id, [FromBody] UpdateUserRequestDto dto)
+    public async Task<IActionResult> Update([FromRoute] string id, [FromBody] UpdateUserRequestDto dto)
     {
         var user = await _context.Users.FirstOrDefaultAsync(x => x.Id == id);
 
@@ -78,7 +78,7 @@ public class UsersController : ControllerBase
 
     [HttpDelete]
     [Route("{id}")]
-    public async Task<IActionResult> Delete([FromRoute] ulong id)
+    public async Task<IActionResult> Delete([FromRoute] string id)
     {
         var user = await _context.Users.FirstOrDefaultAsync(x => x.Id == id);
 

@@ -1,8 +1,9 @@
+using Microsoft.AspNetCore.Identity;
+
 namespace Coffee.Models;
 
-public class User
+public class User : IdentityUser
 {
-    public ulong Id {get; set;}
     public DateOnly? HiredSince { get; set; }
     public Image? Avatar { get; set; }
     public uint MeetingsCount { get; set; }
@@ -15,5 +16,4 @@ public class User
     public string? Coffee { get; set; }
     public string? Telegram { get; set; }
     public string? Vk { get; set; }
-    public string? PhoneNumber { get; set; }
 }

@@ -2,7 +2,7 @@
 
 public class UserDto
 {
-    public ulong Id
+    public string? Id
     {
         get; set;
     }

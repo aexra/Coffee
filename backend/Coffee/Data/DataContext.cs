@@ -1,11 +1,11 @@
 ﻿using Coffee.Models;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
 namespace Coffee.Data;
 
-public class DataContext : DbContext
+public class DataContext : IdentityDbContext<User>
 {
-    public DbSet<User> Users { get; set; }
     public DbSet<Image> Images { get; set; }
     public DbSet<Theme> Themes { get; set; }
     public DbSet<FutureMeeting> FutureMeetings { get; set; }
