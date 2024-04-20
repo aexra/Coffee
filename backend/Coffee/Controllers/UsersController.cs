@@ -2,6 +2,7 @@
 using Coffee.Dtos.User;
 using Coffee.Mappers;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace Coffee.Controllers;
 
@@ -17,40 +18,40 @@ public class UsersController : ControllerBase
     }
 
     [HttpGet]
-    public IActionResult GetAll()
+    public async Task<IActionResult> GetAll()
     {
-        var users = _context.Users.ToList();
-
-        return Ok(users);
+        var users = await _context.Users.ToListAsync();
+        var dtos = users.Select(u => u.ToDto());
+        return Ok(dtos);
     }
 
     [HttpGet("{id}")]
-    public IActionResult GetById([FromRoute] int id)
+    public async Task<IActionResult> GetById([FromRoute] int id)
     {
-        var user = _context.Users.Find((ulong)id);
+        var user = await _context.Users.FindAsync((ulong)id);
 
         if (user == null)
         {
             return NotFound();
         }
 
-        return Ok(user);
+        return Ok(user.ToDto());
     }
 
     [HttpPost]
-    public IActionResult Create([FromBody] CreateUserRequestDto dto)
+    public async Task<IActionResult> Create([FromBody] CreateUserRequestDto dto)
     {
         var user = dto.ToUser();
-        _context.Users.Add(user);
-        _context.SaveChanges();
+        await _context.Users.AddAsync(user);
+        await _context.SaveChangesAsync();
         return CreatedAtAction(nameof(GetById), new { id = user.Id }, user.ToDto());
     }
 
     [HttpPut]
     [Route("{id}")]
-    public IActionResult Update([FromRoute] ulong id, [FromBody] UpdateUserRequestDto dto)
+    public async Task<IActionResult> Update([FromRoute] ulong id, [FromBody] UpdateUserRequestDto dto)
     {
-        var user = _context.Users.FirstOrDefault(x => x.Id == id);
+        var user = await _context.Users.FirstOrDefaultAsync(x => x.Id == id);
 
         if (user == null)
         {
@@ -70,16 +71,16 @@ public class UsersController : ControllerBase
         user.Vk = dto.Vk;
         user.PhoneNumber = dto.PhoneNumber;
 
-        _context.SaveChanges();
+        await _context.SaveChangesAsync();
 
         return Ok(user.ToDto());
     }
 
     [HttpDelete]
     [Route("{id}")]
-    public IActionResult Delete([FromRoute] ulong id)
+    public async Task<IActionResult> Delete([FromRoute] ulong id)
     {
-        var user = _context.Users.FirstOrDefault(x => x.Id == id);
+        var user = await _context.Users.FirstOrDefaultAsync(x => x.Id == id);
 
         if (user == null)
         {
@@ -87,7 +88,7 @@ public class UsersController : ControllerBase
         }
 
         _context.Users.Remove(user);
-        _context.SaveChanges();
+        await _context.SaveChangesAsync();
 
         return NoContent();
     }

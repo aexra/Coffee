@@ -2,6 +2,7 @@
 using Coffee.Dtos.FutureMeeting;
 using Coffee.Mappers;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace Coffee.Controllers;
 
@@ -17,40 +18,40 @@ public class FutureMeetingsController : ControllerBase
     }
 
     [HttpGet]
-    public IActionResult GetAll()
+    public async Task<IActionResult> GetAll()
     {
-        var fms = _context.FutureMeetings.ToList();
-
-        return Ok(fms);
+        var fms = await _context.FutureMeetings.ToListAsync();
+        var dtos = fms.Select(f => f.ToDto());
+        return Ok(dtos);
     }
 
     [HttpGet("{id}")]
-    public IActionResult GetById([FromRoute] int id)
+    public async Task<IActionResult> GetById([FromRoute] int id)
     {
-        var fm = _context.FutureMeetings.Find((ulong)id);
+        var fm = await _context.FutureMeetings.FindAsync((ulong)id);
 
         if (fm == null)
         {
             return NotFound();
         }
 
-        return Ok(fm);
+        return Ok(fm.ToDto());
     }
 
     [HttpPost]
-    public IActionResult Create([FromBody] CreateFutureMeetingRequestDto dto)
+    public async Task<IActionResult> Create([FromBody] CreateFutureMeetingRequestDto dto)
     {
         var fm = dto.ToFutureMeeting();
-        _context.FutureMeetings.Add(fm);
-        _context.SaveChanges();
+        await _context.FutureMeetings.AddAsync(fm);
+        await _context.SaveChangesAsync();
         return CreatedAtAction(nameof(GetById), new { id = fm.Id }, fm.ToDto());
     }
 
     [HttpPut]
     [Route("{id}")]
-    public IActionResult Update([FromRoute] ulong id, [FromBody] UpdateFutureMeetingRequestDto dto)
+    public async Task<IActionResult> Update([FromRoute] ulong id, [FromBody] UpdateFutureMeetingRequestDto dto)
     {
-        var fm = _context.FutureMeetings.FirstOrDefault(x => x.Id == id);
+        var fm = await _context.FutureMeetings.FirstOrDefaultAsync(x => x.Id == id);
 
         if (fm == null)
         {
@@ -62,16 +63,16 @@ public class FutureMeetingsController : ControllerBase
         fm.User1 = dto.User1;
         fm.User2 = dto.User2;
         
-        _context.SaveChanges();
+        await _context.SaveChangesAsync();
 
         return Ok(fm.ToDto());
     }
 
     [HttpDelete]
     [Route("{id}")]
-    public IActionResult Delete([FromRoute] ulong id)
+    public async Task<IActionResult> Delete([FromRoute] ulong id)
     {
-        var fm = _context.FutureMeetings.FirstOrDefault(x => x.Id == id);
+        var fm = await _context.FutureMeetings.FirstOrDefaultAsync(x => x.Id == id);
 
         if (fm == null)
         {
@@ -79,7 +80,7 @@ public class FutureMeetingsController : ControllerBase
         }
 
         _context.FutureMeetings.Remove(fm);
-        _context.SaveChanges();
+        await _context.SaveChangesAsync();
 
         return NoContent();
     }

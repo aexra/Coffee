@@ -2,6 +2,7 @@
 using Coffee.Dtos.Image;
 using Coffee.Mappers;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace Coffee.Controllers;
 
@@ -17,40 +18,40 @@ public class ImagesController : ControllerBase
     }
 
     [HttpGet]
-    public IActionResult GetAll()
+    public async Task<IActionResult> GetAll()
     {
-        var images = _context.Images.ToList();
-
-        return Ok(images);
+        var images = await _context.Images.ToListAsync();
+        var dtos = images.Select(i => i.ToDto());
+        return Ok(dtos);
     }
 
     [HttpGet("{id}")]
-    public IActionResult GetById([FromRoute] int id)
+    public async Task<IActionResult> GetById([FromRoute] int id)
     {
-        var image = _context.Images.Find((ulong)id);
+        var image = await _context.Images.FindAsync((ulong)id);
 
         if (image == null)
         {
             return NotFound();
         }
 
-        return Ok(image);
+        return Ok(image.ToDto());
     }
 
     [HttpPost]
-    public IActionResult Create([FromBody] CreateImageRequestDto dto)
+    public async Task<IActionResult> Create([FromBody] CreateImageRequestDto dto)
     {
         var image = dto.ToImage();
-        _context.Images.Add(image);
-        _context.SaveChanges();
+        await _context.Images.AddAsync(image);
+        await _context.SaveChangesAsync();
         return CreatedAtAction(nameof(GetById), new { id = image.Id }, image.ToDto());
     }
 
     [HttpPut]
     [Route("{id}")]
-    public IActionResult Update([FromRoute] ulong id, [FromBody] UpdateImageRequestDto dto)
+    public async Task<IActionResult> Update([FromRoute] ulong id, [FromBody] UpdateImageRequestDto dto)
     {
-        var image = _context.Images.FirstOrDefault(x => x.Id == id);
+        var image = await _context.Images.FirstOrDefaultAsync(x => x.Id == id);
 
         if (image == null)
         {
@@ -59,16 +60,16 @@ public class ImagesController : ControllerBase
 
         image.BytesString = dto.BytesString;
 
-        _context.SaveChanges();
+        await _context.SaveChangesAsync();
 
         return Ok(image.ToDto());
     }
 
     [HttpDelete]
     [Route("{id}")]
-    public IActionResult Delete([FromRoute] ulong id)
+    public async Task<IActionResult> Delete([FromRoute] ulong id)
     {
-        var image = _context.Images.FirstOrDefault(x => x.Id == id);
+        var image = await _context.Images.FirstOrDefaultAsync(x => x.Id == id);
 
         if (image == null)
         {
@@ -76,7 +77,7 @@ public class ImagesController : ControllerBase
         }
 
         _context.Images.Remove(image);
-        _context.SaveChanges();
+        await _context.SaveChangesAsync();
 
         return NoContent();
     }

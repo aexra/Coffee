@@ -2,6 +2,7 @@
 using Coffee.Dtos.Room;
 using Coffee.Mappers;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace Coffee.Controllers;
 
@@ -17,40 +18,40 @@ public class RoomsController : ControllerBase
     }
 
     [HttpGet]
-    public IActionResult GetAll()
+    public async Task<IActionResult> GetAll()
     {
-        var rooms = _context.Rooms.ToList();
-
-        return Ok(rooms);
+        var rooms = await _context.Rooms.ToListAsync();
+        var dtos = rooms.Select(r => r.ToDto());
+        return Ok(dtos);
     }
 
     [HttpGet("{id}")]
-    public IActionResult GetById([FromRoute] int id)
+    public async Task<IActionResult> GetById([FromRoute] int id)
     {
-        var room = _context.Rooms.Find((ulong)id);
+        var room = await _context.Rooms.FindAsync((ulong)id);
 
         if (room == null)
         {
             return NotFound();
         }
 
-        return Ok(room);
+        return Ok(room.ToDto());
     }
 
     [HttpPost]
-    public IActionResult Create([FromBody] CreateRoomRequestDto dto)
+    public async Task<IActionResult> Create([FromBody] CreateRoomRequestDto dto)
     {
         var room = dto.ToRoom();
-        _context.Rooms.Add(room);
-        _context.SaveChanges();
+        await _context.Rooms.AddAsync(room);
+        await _context.SaveChangesAsync();
         return CreatedAtAction(nameof(GetById), new { id = room.Id }, room.ToDto());
     }
 
     [HttpPut]
     [Route("{id}")]
-    public IActionResult Update([FromRoute] ulong id, [FromBody] UpdateRoomRequestDto dto)
+    public async Task<IActionResult> Update([FromRoute] ulong id, [FromBody] UpdateRoomRequestDto dto)
     {
-        var room = _context.Rooms.FirstOrDefault(x => x.Id == id);
+        var room = await _context.Rooms.FirstOrDefaultAsync(x => x.Id == id);
 
         if (room == null)
         {
@@ -60,16 +61,16 @@ public class RoomsController : ControllerBase
         room.User1 = dto.User1;
         room.User2 = dto.User2;
 
-        _context.SaveChanges();
+        await _context.SaveChangesAsync();
 
         return Ok(room.ToDto());
     }
 
     [HttpDelete]
     [Route("{id}")]
-    public IActionResult Delete([FromRoute] ulong id)
+    public async Task<IActionResult> Delete([FromRoute] ulong id)
     {
-        var room = _context.Rooms.FirstOrDefault(x => x.Id == id);
+        var room = await _context.Rooms.FirstOrDefaultAsync(x => x.Id == id);
 
         if (room == null)
         {
@@ -77,7 +78,7 @@ public class RoomsController : ControllerBase
         }
 
         _context.Rooms.Remove(room);
-        _context.SaveChanges();
+        await _context.SaveChangesAsync();
 
         return NoContent();
     }

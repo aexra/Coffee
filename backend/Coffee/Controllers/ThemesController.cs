@@ -2,6 +2,7 @@
 using Coffee.Dtos.Theme;
 using Coffee.Mappers;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace Coffee.Controllers;
 
@@ -17,40 +18,40 @@ public class ThemesController : ControllerBase
     }
 
     [HttpGet]
-    public IActionResult GetAll()
+    public async Task<IActionResult> GetAll()
     {
-        var themes = _context.Themes.ToList();
-
-        return Ok(themes);
+        var themes = await _context.Themes.ToListAsync();
+        var dtos = themes.Select(t => t.ToDto());
+        return Ok(dtos);
     }
 
     [HttpGet("{id}")]
-    public IActionResult GetById([FromRoute] int id)
+    public async Task<IActionResult> GetById([FromRoute] int id)
     {
-        var theme = _context.Themes.Find((ulong)id);
+        var theme = await _context.Themes.FindAsync((ulong)id);
 
         if (theme == null)
         {
             return NotFound();
         }
 
-        return Ok(theme);
+        return Ok(theme.ToDto());
     }
 
     [HttpPost]
-    public IActionResult Create([FromBody] CreateThemeRequestDto dto)
+    public async Task<IActionResult> Create([FromBody] CreateThemeRequestDto dto)
     {
         var theme = dto.ToTheme();
-        _context.Themes.Add(theme);
-        _context.SaveChanges();
+        await _context.Themes.AddAsync(theme);
+        await _context.SaveChangesAsync();
         return CreatedAtAction(nameof(GetById), new { id = theme.Id }, theme.ToDto());
     }
 
     [HttpPut]
     [Route("{id}")]
-    public IActionResult Update([FromRoute] ulong id, [FromBody] UpdateThemeRequestDto dto)
+    public async Task<IActionResult> Update([FromRoute] ulong id, [FromBody] UpdateThemeRequestDto dto)
     {
-        var theme = _context.Themes.FirstOrDefault(x => x.Id == id);
+        var theme = await _context.Themes.FirstOrDefaultAsync(x => x.Id == id);
 
         if (theme == null)
         {
@@ -59,16 +60,16 @@ public class ThemesController : ControllerBase
 
         theme.Description = dto.Description;
 
-        _context.SaveChanges();
+        await _context.SaveChangesAsync();
 
         return Ok(theme.ToDto());
     }
 
     [HttpDelete]
     [Route("{id}")]
-    public IActionResult Delete([FromRoute] ulong id)
+    public async Task<IActionResult> Delete([FromRoute] ulong id)
     {
-        var theme = _context.Themes.FirstOrDefault(x => x.Id == id);
+        var theme = await _context.Themes.FirstOrDefaultAsync(x => x.Id == id);
 
         if (theme == null)
         {
@@ -76,7 +77,7 @@ public class ThemesController : ControllerBase
         }
 
         _context.Themes.Remove(theme);
-        _context.SaveChanges();
+        await _context.SaveChangesAsync();
 
         return NoContent();
     }

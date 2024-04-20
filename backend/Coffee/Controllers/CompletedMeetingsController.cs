@@ -2,6 +2,7 @@
 using Coffee.Dtos.CompletedMeeting;
 using Coffee.Mappers;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace Coffee.Controllers;
 
@@ -17,40 +18,40 @@ public class CompletedMeetingsController : ControllerBase
     }
 
     [HttpGet]
-    public IActionResult GetAll()
+    public async Task<IActionResult> GetAll()
     {
-        var cms = _context.CompletedMeetings.ToList();
-
-        return Ok(cms);
+        var cms = await _context.CompletedMeetings.ToListAsync();
+        var dtos = cms.Select(c => c.ToDto());
+        return Ok(dtos);
     }
 
     [HttpGet("{id}")]
-    public IActionResult GetById([FromRoute] int id)
+    public async Task<IActionResult> GetById([FromRoute] int id)
     {
-        var cm = _context.CompletedMeetings.Find((ulong)id);
+        var cm = await _context.CompletedMeetings.FindAsync((ulong)id);
 
         if (cm == null)
         {
             return NotFound();
         }
 
-        return Ok(cm);
+        return Ok(cm.ToDto());
     }
 
     [HttpPost]
-    public IActionResult Create([FromBody] CreateCompletedMeetingRequestDto dto)
+    public async Task<IActionResult> Create([FromBody] CreateCompletedMeetingRequestDto dto)
     {
         var cm = dto.ToCompletedMeeting();
-        _context.CompletedMeetings.Add(cm);
-        _context.SaveChanges();
+        await _context.CompletedMeetings.AddAsync(cm);
+        await _context.SaveChangesAsync();
         return CreatedAtAction(nameof(GetById), new { id = cm.Id }, cm.ToDto());
     }
 
     [HttpPut]
     [Route("{id}")]
-    public IActionResult Update([FromRoute] ulong id, [FromBody] UpdateCompletedMeetingRequestDto dto)
+    public async Task<IActionResult> Update([FromRoute] ulong id, [FromBody] UpdateCompletedMeetingRequestDto dto)
     {
-        var cm = _context.CompletedMeetings.FirstOrDefault(x => x.Id == id);
+        var cm = await _context.CompletedMeetings.FirstOrDefaultAsync(x => x.Id == id);
 
         if (cm == null)
         {
@@ -66,16 +67,16 @@ public class CompletedMeetingsController : ControllerBase
         cm.Images = dto.Images;
         cm.ImagesBlobbed = dto.ImagesBlobbed;
 
-        _context.SaveChanges();
+        await _context.SaveChangesAsync();
 
         return Ok(cm.ToDto());
     }
 
     [HttpDelete]
     [Route("{id}")]
-    public IActionResult Delete([FromRoute] ulong id)
+    public async Task<IActionResult> Delete([FromRoute] ulong id)
     {
-        var cm = _context.CompletedMeetings.FirstOrDefault(x => x.Id == id);
+        var cm = await _context.CompletedMeetings.FirstOrDefaultAsync(x => x.Id == id);
 
         if (cm == null)
         {
@@ -83,7 +84,7 @@ public class CompletedMeetingsController : ControllerBase
         }
 
         _context.CompletedMeetings.Remove(cm);
-        _context.SaveChanges();
+        await _context.SaveChangesAsync();
 
         return NoContent();
     }
