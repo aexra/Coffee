@@ -1,20 +1,20 @@
-﻿namespace Coffee.Dtos.User;
+﻿using System.ComponentModel.DataAnnotations;
 
-public class UserDto
+namespace Coffee.Dtos.Account;
+
+public class RegisterDto
 {
-    public string? Id
-    {
-        get; set;
-    }
+    [Required]
+    public string? UserName { get; set; }
+
+    [Required]
+    [EmailAddress]
+    public string? Email { get; set; }
+
+    [Required]
+    public string? Password { get; set; }
+
     public DateOnly? HiredSince
-    {
-        get; set;
-    }
-    public Models.Image? Avatar
-    {
-        get; set;
-    }
-    public uint MeetingsCount
     {
         get; set;
     }
@@ -51,10 +51,6 @@ public class UserDto
         get; set;
     }
     public string? Vk
-    {
-        get; set;
-    }
-    public string? PhoneNumber
     {
         get; set;
     }

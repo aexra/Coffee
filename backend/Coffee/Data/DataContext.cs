@@ -1,4 +1,5 @@
 ﻿using Coffee.Models;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
@@ -20,4 +21,24 @@ public class DataContext : IdentityDbContext<User>
     }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder) => optionsBuilder.UseSqlite($"Data Source={DbPath}");
+    protected override void OnModelCreating(ModelBuilder builder)
+    {
+        base.OnModelCreating(builder);
+
+        List<IdentityRole> roles = new()
+        {
+            new()
+            {
+                Name = "Admin",
+                NormalizedName = "ADMIN",
+            },
+            new()
+            {
+                Name = "User",
+                NormalizedName = "USER",
+            }
+        };
+
+        builder.Entity<IdentityRole>().HasData(roles);
+    }
 }
