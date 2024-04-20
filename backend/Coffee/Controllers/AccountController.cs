@@ -27,6 +27,7 @@ public class AccountController : ControllerBase
     }
 
     [HttpGet]
+    [Authorize(Roles = "Admin")]
     public async Task<IActionResult> GetAll()
     {
         return Ok(await _userManager.Users.ToListAsync());
@@ -34,6 +35,7 @@ public class AccountController : ControllerBase
 
     [HttpGet]
     [Route("{username}")]
+    [Authorize(Roles = "Admin")]
     public async Task<IActionResult> GetByName([FromRoute] string username)
     {
         var user = await _userManager.FindByNameAsync(username);
@@ -138,6 +140,7 @@ public class AccountController : ControllerBase
 
     [HttpDelete]
     [Route("{username}")]
+    [Authorize(Roles = "Admin")]
     public async Task<IActionResult> Delete([FromRoute] string username)
     {
         var user = await _userManager.Users.FirstOrDefaultAsync(x => x.UserName == username);
@@ -153,7 +156,7 @@ public class AccountController : ControllerBase
     }
 
     [HttpGet]
-    //[Authorize(Roles = "Admin")]
+    [Authorize(Roles = "Admin")]
     [Route("roles/{username}")]
     public async Task<IActionResult> GetRoles([FromRoute] string username)
     {
@@ -172,6 +175,7 @@ public class AccountController : ControllerBase
     }
 
     [HttpPost]
+    [Authorize(Roles = "Admin")]
     [Route("roles/username={username}&role={roleName}")]
     public async Task<IActionResult> SetRole([FromRoute] string username, [FromRoute] string roleName)
     {
