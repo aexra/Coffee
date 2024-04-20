@@ -118,6 +118,30 @@ namespace Coffee.Migrations
                         principalColumn: "Id");
                 });
 
+            migrationBuilder.CreateTable(
+                name: "Rooms",
+                columns: table => new
+                {
+                    Id = table.Column<ulong>(type: "INTEGER", nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
+                    User1Id = table.Column<ulong>(type: "INTEGER", nullable: true),
+                    User2Id = table.Column<ulong>(type: "INTEGER", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Rooms", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Rooms_Users_User1Id",
+                        column: x => x.User1Id,
+                        principalTable: "Users",
+                        principalColumn: "Id");
+                    table.ForeignKey(
+                        name: "FK_Rooms_Users_User2Id",
+                        column: x => x.User2Id,
+                        principalTable: "Users",
+                        principalColumn: "Id");
+                });
+
             migrationBuilder.CreateIndex(
                 name: "IX_CompletedMeetings_CancellerId",
                 table: "CompletedMeetings",
@@ -147,6 +171,16 @@ namespace Coffee.Migrations
                 name: "IX_Images_CompletedMeetingId",
                 table: "Images",
                 column: "CompletedMeetingId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Rooms_User1Id",
+                table: "Rooms",
+                column: "User1Id");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Rooms_User2Id",
+                table: "Rooms",
+                column: "User2Id");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Users_AvatarId",
@@ -192,6 +226,9 @@ namespace Coffee.Migrations
 
             migrationBuilder.DropTable(
                 name: "FutureMeetings");
+
+            migrationBuilder.DropTable(
+                name: "Rooms");
 
             migrationBuilder.DropTable(
                 name: "Themes");

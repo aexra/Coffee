@@ -10,6 +10,7 @@ public class DataContext : DbContext
     public DbSet<Theme> Themes { get; set; }
     public DbSet<FutureMeeting> FutureMeetings { get; set; }
     public DbSet<CompletedMeeting> CompletedMeetings { get; set; }
+    public DbSet<Room> Rooms { get; set; }
 
     public string DbPath { get; }
 

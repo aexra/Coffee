@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Coffee.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20240420102535_InitialCreate")]
+    [Migration("20240420103748_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />
@@ -102,6 +102,27 @@ namespace Coffee.Migrations
                     b.HasIndex("CompletedMeetingId");
 
                     b.ToTable("Images");
+                });
+
+            modelBuilder.Entity("Coffee.Models.Room", b =>
+                {
+                    b.Property<ulong>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<ulong?>("User1Id")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<ulong?>("User2Id")
+                        .HasColumnType("INTEGER");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("User1Id");
+
+                    b.HasIndex("User2Id");
+
+                    b.ToTable("Rooms");
                 });
 
             modelBuilder.Entity("Coffee.Models.Theme", b =>
@@ -211,6 +232,21 @@ namespace Coffee.Migrations
                     b.HasOne("Coffee.Models.CompletedMeeting", null)
                         .WithMany("Images")
                         .HasForeignKey("CompletedMeetingId");
+                });
+
+            modelBuilder.Entity("Coffee.Models.Room", b =>
+                {
+                    b.HasOne("Coffee.Models.User", "User1")
+                        .WithMany()
+                        .HasForeignKey("User1Id");
+
+                    b.HasOne("Coffee.Models.User", "User2")
+                        .WithMany()
+                        .HasForeignKey("User2Id");
+
+                    b.Navigation("User1");
+
+                    b.Navigation("User2");
                 });
 
             modelBuilder.Entity("Coffee.Models.User", b =>
