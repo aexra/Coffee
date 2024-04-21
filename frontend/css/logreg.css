@@ -20,8 +20,8 @@ body {
 }
 
 .form {
-    width: 30%;
-    height: 70%;
+    min-width: 30%;
+    min-height: 70%;
 
     border-radius: 15px;
 
@@ -48,10 +48,12 @@ body {
 }
 
 .form > .container > .title {
+    width: 80%;
     text-align: center;
     font-size: 36px;
     font-weight: 700;
     font-style: italic;
+    text-wrap: wrap;
 }
 
 .form > .container > .subtitle {
@@ -69,6 +71,7 @@ body {
 }
 
 .form > .container > .input > .header {
+    width: 80%;
     margin: 0 10% 0 10%;
     align-self: flex-start;
 }
