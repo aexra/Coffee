@@ -1,0 +1,217 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+*{
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bold;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+}
+
+.center-content {
+  display: flex;
+  align-items: center;
+}
+
+.logo-button {
+  background-color: transparent;
+  border: none;
+  padding: 0;
+}
+
+.logo {
+  width: auto;
+  height: 4rem;
+}
+
+
+.transparent-button {
+  background-color: transparent;
+  border: none;
+  padding: 15px; 
+  cursor: pointer;
+  font-size: 18px; 
+  align-items: center;
+
+}
+
+.calls-overlay {
+
+display: flex;
+flex-direction: column;
+align-items: center;
+padding: 0px;
+gap: 10px;
+
+position: absolute;
+width: 700px;
+height: 500px;
+left: 123px;
+top: 164px;
+
+background: #FFFFFF;
+box-shadow: 0px 100px 80px rgba(0, 0, 0, 0.07), 0px 41.7776px 33.4221px rgba(0, 0, 0, 0.0503198), 0px 22.3363px 17.869px rgba(0, 0, 0, 0.0417275), 0px 12.5216px 10.0172px rgba(0, 0, 0, 0.035), 0px 6.6501px 5.32008px rgba(0, 0, 0, 0.0282725), 0px 2.76726px 2.21381px rgba(0, 0, 0, 0.0196802);
+border-radius: 16px;
+
+flex: none;
+order: 1;
+flex-grow: 0;
+}
+
+.call {
+display: flex;
+flex-direction: column;
+justify-content: center;
+padding: 30px;
+gap: 12px;
+
+width: 531px;
+height: 2rem;
+
+background: #FFFFFF;
+box-shadow: 0px 100px 80px rgba(0, 0, 0, 0.07), 0px 41.7776px 33.4221px rgba(0, 0, 0, 0.0503198), 0px 22.3363px 17.869px rgba(0, 0, 0, 0.0417275), 0px 12.5216px 10.0172px rgba(0, 0, 0, 0.035), 0px 6.6501px 5.32008px rgba(0, 0, 0, 0.0282725), 0px 2.76726px 2.21381px rgba(0, 0, 0, 0.0196802);
+border-radius: 16px;
+
+flex: none;
+order: 1;
+flex-grow: 0;
+
+}
+
+.name {
+  font-weight: bold;
+}
+
+.details {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.date {
+  font-size: 12px;
+}
+
+.time {
+  font-size: 14px;
+  text-align: center;
+}
+
+.status {
+  font-size: 12px;
+  text-align: right;
+}
+
+.calendar-overlay{
+  
+display: flex;
+flex-direction: column;
+align-items: center;
+gap: 10px;
+margin-left: 20rem;
+
+position: absolute;
+width: 502px;
+height: 500px;
+left: 805px;
+top: 164px;
+
+background: #FFFFFF;
+box-shadow: 0px 100px 80px rgba(0, 0, 0, 0.07), 0px 41.7776px 33.4221px rgba(0, 0, 0, 0.0503198), 0px 22.3363px 17.869px rgba(0, 0, 0, 0.0417275), 0px 12.5216px 10.0172px rgba(0, 0, 0, 0.035), 0px 6.6501px 5.32008px rgba(0, 0, 0, 0.0282725), 0px 2.76726px 2.21381px rgba(0, 0, 0, 0.0196802);
+border-radius: 16px;
+}
+
+.react-calendar__month-view__days{
+display: flex;
+flex-direction: column;
+align-items: center;
+padding: 0px;
+
+width: 442px;
+height: 379px;
+
+flex: none;
+order: 1;
+flex-grow: 0;
+}
+
+.react-calendar__month-view__days__day{
+  width: 50px;
+  height: 50px;
+  border: none;
+}
+
+.react-calendar__navigation{
+display: flex;
+flex-direction: row;
+justify-content: space-between;
+align-items: center;
+padding: 0px;
+gap: 73px;
+background-color: transparent;
+border: none;
+width: 442px;
+height: 46px;
+flex: none;
+order: 0;
+align-self: stretch;
+flex-grow: 0;
+
+}
+
+.react-calendar__month-view__weekdays{
+display: flex;
+flex-direction: row;
+align-items: center;
+padding: 0px;
+
+width: 442px;
+height: 64px;
+flex: none;
+order: 0;
+flex-grow: 0;
+margin: -1px 0px;
+}
+
+.photos-overlay {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #FFFFFF;
+  box-shadow: 0px 100px 80px rgba(0, 0, 0, 0.07), 0px 41.7776px 33.4221px rgba(0, 0, 0, 0.0503198), 0px 22.3363px 17.869px rgba(0, 0, 0, 0.0417275), 0px 12.5216px 10.0172px rgba(0, 0, 0, 0.035), 0px 6.6501px 5.32008px rgba(0, 0, 0, 0.0282725), 0px 2.76726px 2.21381px rgba(0, 0, 0, 0.0196802);
+}
+
+.photos-overlay img {
+  margin: 0 5px; 
+  max-width: 100px; 
+}
+
+.photo-placeholder {
+  position: relative;
+  width: 100px; 
+  height: 100px;
+  background: #FFFFFF;
+  box-shadow: 0px 100px 80px rgba(0, 0, 0, 0.07), 0px 41.7776px 33.4221px rgba(0, 0, 0, 0.0503198), 0px 22.3363px 17.869px rgba(0, 0, 0, 0.0417275), 0px 12.5216px 10.0172px rgba(0, 0, 0, 0.035), 0px 6.6501px 5.32008px rgba(0, 0, 0, 0.0282725), 0px 2.76726px 2.21381px rgba(0, 0, 0, 0.0196802);
+  border-radius: 16px;
+  margin: 0 10px;
+  margin-bottom: 50px;
+}
+
+.overlay-title {
+  margin-top: 650px;
+  margin-left: 150px;
+}
+
+.bottom-right-image {
+  position: fixed;
+  bottom: 1px; 
+  right: 1px; 
+  z-index: -1; 
+}
