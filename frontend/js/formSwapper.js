@@ -7,6 +7,7 @@ const regForm = document.getElementById("reg-f");
 
 const applyRegisterBtn = document.getElementById("applyRegisterBtn");
 const closeRegFormBtn = document.getElementById("closeRegFormBtn");
+const closeLoginFormBtn = document.getElementById("closeLoginFormBtn");
 
 regBtn.addEventListener("click", (e) => {
     if (!regConditionHandler()) return;
@@ -23,6 +24,10 @@ applyRegisterBtn.addEventListener("click", (e) => {
 });
 
 closeRegFormBtn.addEventListener("click", (e) => {
+    switchFrame(0);
+});
+
+closeLoginFormBtn.addEventListener("click", (e) => {
     switchFrame(0);
 });
 
