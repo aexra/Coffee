@@ -18,7 +18,7 @@
 
 ![HOME](https://github.com/aexra/Coffee/assets/121866384/467cd930-767a-478c-a708-d07aa9531b0a)
 
-![PROFILE](https://github.com/aexra/Coffee/assets/121866384/1ad9a594-26ad-42f2-ad44-8460e4e7817c)
+![PROFILE (1)](https://github.com/aexra/Coffee/assets/121866384/aa5b338e-9667-4f85-ae95-d479e0b6074e)
 
 ![QUESTIONARRE](https://github.com/aexra/Coffee/assets/121866384/ed08faa7-12db-4630-aabf-f671c202fcec)
 
