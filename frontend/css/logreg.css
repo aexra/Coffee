@@ -98,6 +98,8 @@ body {
     border-radius: 20px;
 
     transition: all 0.3s ease;
+
+    cursor: pointer;
 }
 .form > .container > a.button:hover {
     background-color: #582a00;
@@ -107,15 +109,15 @@ body {
     margin-top: auto;
 }
 
-#base {
+#base-f {
     display: flex;
 }
 
-#login {
+#login-f {
     display: none;
 }
 
-#register {
+#reg-f {
     display: none;
 }
 
